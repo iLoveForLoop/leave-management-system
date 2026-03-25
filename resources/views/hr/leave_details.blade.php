@@ -239,11 +239,11 @@
                     <!-- Hidden Approval Fields -->
                     <div id="approvalSection" class="mt-3 hidden h-auto">
                         <label class="block text-gray-700 font-medium text-xs">Approved Days With Pay:</label>
-                        <input type="number" name="approved_days_with_pay"
+                        <input type="number" step="any" name="approved_days_with_pay"
                             class="w-full border rounded p-2 text-xs focus:ring focus:ring-blue-200">
 
                         <label class="block text-gray-700 font-medium text-xs">Approved Days Without Pay:</label>
-                        <input type="number" name="approved_days_without_pay"
+                        <input type="number" step="any" name="approved_days_without_pay"
                             class="w-full border rounded p-2 text-xs focus:ring focus:ring-blue-200">
 
                         <label class="block text-gray-700 font-medium text-xs">Others:</label>
@@ -413,11 +413,11 @@
                 <!-- Approval Section -->
                 <div id="approveSection" class="mt-3 hidden h-auto">
                     <label class="block text-gray-700 font-medium text-xs">Approved Days With Pay:</label>
-                    <input type="number" name="approved_days_with_pay"
+                    <input type="number" step="any" name="approved_days_with_pay"
                         class="w-full border rounded p-2 text-xs focus:ring focus:ring-blue-200">
 
                     <label class="block text-gray-700 font-medium text-xs">Approved Days Without Pay:</label>
-                    <input type="number" name="approved_days_without_pay"
+                    <input type="number" step="any" name="approved_days_without_pay"
                         class="w-full border rounded p-2 text-xs focus:ring focus:ring-blue-200">
 
                     <label class="block text-gray-700 font-medium text-xs">Others:</label>

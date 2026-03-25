@@ -247,9 +247,11 @@ class AdminController extends Controller
 
     if (in_array($request->leave_type, $inclusiveLeaveTypes)) {
         $daysApplied = $startDate->diffInDays($endDate) + 1;
-        // ADDING 0.25 TO LEAVE APPLICATIONS
-        $temp = $daysApplied * 0.25;
-        $daysApplied = $temp + $daysApplied;
+        // ADDING 0.25 TO SOME LEAVE APPLICATIONS
+        if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
+            $temp = $daysApplied * 0.25;
+            $daysApplied = $temp + $daysApplied;
+        }
         //-----------------------------------
     } else {
         $daysApplied = 0;
@@ -268,9 +270,11 @@ class AdminController extends Controller
 
             if ($isValidStartDate) {
                 $daysApplied = 1;
-                // ADDING 0.25 TO LEAVE APPLICATIONS
-                $temp = $daysApplied * 0.25;
-                $daysApplied = $temp + $daysApplied;
+                // ADDING 0.25 TO SOME LEAVE APPLICATIONS
+                if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
+                    $temp = $daysApplied * 0.25;
+                    $daysApplied = $temp + $daysApplied;
+                }
                 //-----------------------------------
             } else {
                 return redirect()->back()->withErrors([
@@ -279,9 +283,11 @@ class AdminController extends Controller
             }
         }
 
-            // ADDING 0.25 TO LEAVE APPLICATIONS
-            $temp = $daysApplied * 0.25;
-            $daysApplied = $temp + $daysApplied;
+            // ADDING 0.25 TO SOME LEAVE APPLICATIONS
+            if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
+                $temp = $daysApplied * 0.25;
+                $daysApplied = $temp + $daysApplied;
+            }
             //-----------------------------------
     }
 
