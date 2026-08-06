@@ -49,9 +49,9 @@ class OvertimeRequestController extends Controller
 
     //CHANGE 4 to 5 and 8 to 10
     $ctoHoursMap = [
-        'halfday_morning' => 5,
-        'halfday_afternoon' => 5,
-        'wholeday' => 10,
+        'halfday_morning' => 4,
+        'halfday_afternoon' => 4,
+        'wholeday' => 8,
     ];
 
     $datesArray = explode(', ', $request->inclusive_dates);

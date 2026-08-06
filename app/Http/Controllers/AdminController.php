@@ -248,10 +248,10 @@ class AdminController extends Controller
     if (in_array($request->leave_type, $inclusiveLeaveTypes)) {
         $daysApplied = $startDate->diffInDays($endDate) + 1;
         // ADDING 0.25 TO SOME LEAVE APPLICATIONS
-        if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
-            $temp = $daysApplied * 0.25;
-            $daysApplied = $temp + $daysApplied;
-        }
+        // if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
+        //     $temp = $daysApplied * 0.25;
+        //     $daysApplied = $temp + $daysApplied;
+        // }
         //-----------------------------------
     } else {
         $daysApplied = 0;
@@ -271,10 +271,10 @@ class AdminController extends Controller
             if ($isValidStartDate) {
                 $daysApplied = 1;
                 // ADDING 0.25 TO SOME LEAVE APPLICATIONS
-                if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
-                    $temp = $daysApplied * 0.25;
-                    $daysApplied = $temp + $daysApplied;
-                }
+                // if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
+                //     $temp = $daysApplied * 0.25;
+                //     $daysApplied = $temp + $daysApplied;
+                // }
                 //-----------------------------------
             } else {
                 return redirect()->back()->withErrors([
@@ -284,10 +284,10 @@ class AdminController extends Controller
         }
 
             // ADDING 0.25 TO SOME LEAVE APPLICATIONS
-            if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
-                $temp = $daysApplied * 0.25;
-                $daysApplied = $temp + $daysApplied;
-            }
+            // if (in_array($request->leave_type, ['Sick Leave', 'Vacation Leave', 'Mandatory Leave'])){
+            //     $temp = $daysApplied * 0.25;
+            //     $daysApplied = $temp + $daysApplied;
+            // }
             //-----------------------------------
     }
 
@@ -586,9 +586,9 @@ class AdminController extends Controller
 {
     //CHANGE 4 to 5 and 8 to 10
     $ctoHoursMap = [
-        'halfday_morning' => 5,
-        'halfday_afternoon' => 5,
-        'wholeday' => 10,
+        'halfday_morning' => 4,
+        'halfday_afternoon' => 4,
+        'wholeday' => 8,
     ];
 
     $datesArray = explode(', ', $request->inclusive_dates);
